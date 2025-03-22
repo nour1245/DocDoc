@@ -1,6 +1,7 @@
 import 'package:advanced/core/themeing/styles.dart';
 import 'package:advanced/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ListTitle extends StatelessWidget {
   const ListTitle({super.key,required this.title,required this.onTap});
@@ -16,7 +17,7 @@ final Function()? onTap;
               title,
               style: Styles.mainText(
                 context,
-              ).copyWith(fontSize: 18, fontWeight: FontWeight.w600),
+              ).copyWith(fontSize: 18.sp, fontWeight: FontWeight.w600),
             ),
             Spacer(),
             GestureDetector(

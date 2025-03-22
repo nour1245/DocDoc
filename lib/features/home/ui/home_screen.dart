@@ -33,23 +33,25 @@ class HomeScreen extends StatelessWidget {
                 var homePageData = homePageResponseModel;
                 return Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: Column(
-                    children: [
-                      NameAndNotification(),
-                      verticalSpace(12.h),
-                      HomePageBanner(),
-                      verticalSpace(12.h),
-                      ListTitle(title: S.of(context).specialty, onTap: () {}),
-                      verticalSpace(14.h),
-                      SpecialityList(specialityList: homePageData.data!,),
-                      verticalSpace(14.h),
-                      ListTitle(
-                        title: S.of(context).recommendation,
-                        onTap: () {},
-                      ),
-                      DoctorRecommendationList(doctorsList: homePageData.data![0].doctors!,),
-                      HomeScreenNavigationBar(),
-                    ],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        NameAndNotification(),
+                        verticalSpace(12.h),
+                        HomePageBanner(),
+                        verticalSpace(12.h),
+                        ListTitle(title: S.of(context).specialty, onTap: () {}),
+                        verticalSpace(14.h),
+                        SpecialityList(specialityList: homePageData.data!,),
+                        verticalSpace(14.h),
+                        ListTitle(
+                          title: S.of(context).recommendation,
+                          onTap: () {},
+                        ),
+                        DoctorRecommendationList(doctorsList: homePageData.data![0].doctors!,),
+                        HomeScreenNavigationBar(),
+                      ],
+                    ),
                   ),
                 );
               },

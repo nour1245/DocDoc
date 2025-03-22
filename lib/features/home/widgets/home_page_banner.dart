@@ -28,7 +28,7 @@ class HomePageBanner extends StatelessWidget {
               S.of(context).book,
               style: Styles.font16White_400w(
                 context,
-              ).copyWith(fontSize: 18, height: 1.6),
+              ).copyWith(fontSize: 18.sp, height: 1.4.h),
             ),
           ),
           Positioned(
@@ -39,19 +39,11 @@ class HomePageBanner extends StatelessWidget {
           Positioned(
             top: 120.h,
             left: 30.w,
-            child: Container(
-              width: 109.w,
-              height: 38.h,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(48.r),
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  S.of(context).findNearby,
-                  style: Styles.font13BlueW400(context),
-                ),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                S.of(context).findNearby,
+                style: Styles.font13BlueW400(context),
               ),
             ),
           ),
