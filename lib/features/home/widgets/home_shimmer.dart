@@ -11,6 +11,7 @@ class HomeShimmer extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Shimmer.fromColors(
             baseColor: Colors.grey[300]!,
