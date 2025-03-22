@@ -33,8 +33,12 @@ class HomePageBanner extends StatelessWidget {
           ),
           Positioned(
             left: 200.w,
-            bottom: 26.5.h,
-            child: Image.asset(nurseImage),
+            bottom: 18.h,
+            child: Image.asset(
+              nurseImage,
+              width: 150.w, 
+              height: 180.h,
+            ),
           ),
           Positioned(
             top: 120.h,

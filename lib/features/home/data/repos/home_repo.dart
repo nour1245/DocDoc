@@ -1,3 +1,5 @@
+import 'package:advanced/core/helpers/constants.dart';
+import 'package:advanced/core/helpers/shared_pref_helper.dart';
 import 'package:advanced/core/networking/api_constants.dart';
 import 'package:advanced/core/networking/api_error_handler.dart';
 import 'package:advanced/core/networking/api_result.dart';
@@ -11,7 +13,11 @@ class HomeRepo {
 
   Future<ApiResult<HomePageResponseModel>> getHomePageData() async {
     try {
-      final response = await _apiServics.getHomePageData(ApiConstants.userToken);
+      final userToken = await SharedPrefHelper.getSecuredString(
+        SharedPrefKeys.userToken,
+      );
+
+      final response = await _apiServics.getHomePageData('Bearer $userToken');
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ApiErrorHandler.handle(e));
