@@ -1,5 +1,6 @@
 import 'package:advanced/core/di/dependancy.dart';
 import 'package:advanced/core/routing/routes.dart';
+import 'package:advanced/features/home/controller/cubit/home_cubit.dart';
 import 'package:advanced/features/home/ui/home_screen.dart';
 import 'package:advanced/features/login/logic/cubit/login_cubit.dart';
 import 'package:advanced/features/login/ui/login_screen.dart';
@@ -15,7 +16,13 @@ class AppRouter {
       case Routes.onboardingScreen:
         return MaterialPageRoute(builder: (_) => const OnboardingScreen());
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(
+          builder:
+              (_) => BlocProvider(
+                create: (context) => getIt<HomeCubit>()..getHomePageData(),
+                child: const HomeScreen(),
+              ),
+        );
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder:
