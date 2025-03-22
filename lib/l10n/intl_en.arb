@@ -46,5 +46,6 @@
         "findNearby":"Find Nearby",
         "specialty":"Doctor's specialty",
         "seeAll":"See All",
-        "recommendation":"Doctor Recommendation"
+        "recommendation":"Doctor Recommendation",
+        "wentWrong":"Something went wrong"
 }

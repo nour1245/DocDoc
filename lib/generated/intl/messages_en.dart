@@ -113,5 +113,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "validPhone": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
+    "wentWrong": MessageLookupByLibrary.simpleMessage("Something went wrong"),
   };
 }

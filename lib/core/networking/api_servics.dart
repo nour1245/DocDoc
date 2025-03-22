@@ -1,4 +1,5 @@
 import 'package:advanced/core/networking/api_constants.dart';
+import 'package:advanced/features/home/data/models/home_response_model.dart';
 import 'package:advanced/features/login/data/models/login_request_body.dart';
 import 'package:advanced/features/login/data/models/login_response.dart';
 import 'package:advanced/features/signup/data/models/signup_request_body.dart';
@@ -18,5 +19,10 @@ abstract class ApiServics {
   @POST(ApiConstants.signUp)
   Future<SignupResponseModel> signUp(
     @Body() SignupRequestBody signupRequestBody,
+  );
+
+  @GET(ApiConstants.home)
+  Future<HomePageResponseModel> getHomePageData(
+    @Header('Authorization') String token,
   );
 }

@@ -449,6 +449,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Something went wrong`
+  String get wentWrong {
+    return Intl.message(
+      'Something went wrong',
+      name: 'wentWrong',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
